@@ -59,7 +59,8 @@ client.on('message', async msg => {
   }
 });
 
-// Transação
+// Receitas e despesas
+
 async function handleTransaction(msg, type) {
   const value = extractValue(msg.body);
   const transactionId = generateId();
@@ -100,7 +101,7 @@ async function handleTransaction(msg, type) {
   await msg.reply(response);
 }
 
-// Excluir transação
+// Excluir Receita ou Despesa
 async function handleDelete(msg) {
   const match = msg.body.match(/excluir transação\s+(\w+)/i);
   if (!match) {
@@ -190,7 +191,7 @@ async function handleGastoCategoriaMes(msg) {
   await msg.reply(resposta);
 }
 
-// Gasto em outro mês
+// Gasto em outros meses
 async function handleGastoCategoriaOutroMes(msg) {
   const match = msg.body.match(/quanto gastei com (.+?) (?:em|no mês de|no mes de|no mês|no mes)\s+([\w\d\/]+)/i);
   if (!match || !match[1] || !match[2]) {
@@ -200,7 +201,7 @@ async function handleGastoCategoriaOutroMes(msg) {
   const termo = match[1].toLowerCase().trim();
   const mesAno = match[2].toLowerCase().trim();
 
-  // Divide se vier no formato "3/2024" ou "março/2022"
+  // Separar o mês e o ano
   const [mesInput, anoInput] = mesAno.includes('/')
     ? mesAno.split('/')
     : [mesAno, null];
@@ -268,7 +269,7 @@ function capitalize(str) {
 }
 
 
-// Utils
+// Utilidades
 
 function definirCategoria(texto) {
   const txt = texto.toLowerCase();
