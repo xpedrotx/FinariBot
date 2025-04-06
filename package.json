@@ -1,0 +1,15 @@
+{
+  "name": "FinariBot",
+  "version": "1.0.0",
+  "description": "Assistente Financeiro Pessoal via WhatsApp usando whatsapp-web.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Pedrotx",
+  "license": "MIT",
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.21.1"
+  }
+}
