@@ -1,4 +1,3 @@
-c
 # 🤖 Finari - Assistente Financeiro no WhatsApp
 
 O **Finari** é um bot pessoal de organização financeira que roda direto no seu computador usando o WhatsApp Web. Ele entende mensagens simples como \`150 mercado\` e registra suas receitas e despesas automaticamente.
